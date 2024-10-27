@@ -14,7 +14,7 @@ const App = () => {
 
   useEffect(()=>{
     setTimeout(()=>setCount(count+1),1000)
-  })
+  },[])
 
   return (
     <div className='parent-component'>
