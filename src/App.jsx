@@ -12,23 +12,40 @@ const App = () => {
     setScore(0)
   }
 
+ 
+ 
+  
   useEffect(()=>{
-    setTimeout(()=>setCount(count+1),1000)
-  },[])
+   
+    
+    
+    setCount(count+1)
+  
+       
+  
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[score])
 
   return (
     <div className='parent-component'>
       <Menu color="blue" firstMenu="Accueil" secondMenu="Service"/>
       <Menu color="yellow" firstMenu="Accueil" secondMenu="Service"/>
       <h2 style={{textAlign:"center"}}>{score}</h2>
-      <h2 style={{textAlign:"center"}}>{count}</h2>
+      <h2 style={{textAlign:"center"}}>{count} fois</h2>
       <div style={{textAlign:"center"}}>
         {/* <button onClick={init}>Initialiser</button> */}
         <Button titre={"Initialiser"} handleAction={init} />
         <Button titre={"Augmenter"} handleAction={()=>setScore(score+1)} />
-        <Button titre={"Diminuer"} handleAction={()=>setScore(score-1)} />
+        <Button titre={"Diminuer"} handleAction={()=>score===0?setScore(0):setScore(score-1)} />
       </div>
-      <Footer />
+      <Footer>
+        <ol>
+          <li>foot1</li>
+          <li>foot1</li>
+        </ol>
+        <div>dggdgdg</div>
+      </Footer>
     </div>
   )
 }

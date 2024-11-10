@@ -1,8 +1,10 @@
 import React from 'react'
 
-function Footer() {
+function Footer({children}) {
   return (
-    <div>Footer footer </div>
+    <div> 
+      {children}
+    </div>
   )
 }
 
